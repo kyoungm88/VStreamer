@@ -61,9 +61,9 @@ class CameraMediaActivity : AppCompatActivity() {
             startActivity(getIntent(RecordActivity::class.java))
         })
 
-//        play_button.setOnClickListener({
-//            startActivity(getIntent(PlayActivity::class.java))
-//        })
+        play_button.setOnClickListener({
+            startActivity(getIntent(PlayActivity::class.java))
+        })
     }
 
     private fun getIntent(cls: Class<*>): Intent {
