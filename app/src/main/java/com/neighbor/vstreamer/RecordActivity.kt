@@ -31,9 +31,7 @@ class RecordActivity : AppCompatActivity() {
     private var cameraDevice: CameraDevice? = null
     private var previewBuilder: CaptureRequest.Builder? = null
     private var previewSession: CameraCaptureSession? = null
-    private var imageReader: ImageReader? = null
 
-//    private var mediaRecorder: MediaRecorder? = null
     private var startRecord = false
 
     private var streamManager: StreamManager? = null
@@ -216,7 +214,7 @@ class RecordActivity : AppCompatActivity() {
         if (streamManager == null) {
             streamManager = StreamManager(this)
         }
-//        streamManager?.readyRecoding()
+
         streamManager?.startRecording(recordStateCallback)
 
 
@@ -238,8 +236,6 @@ class RecordActivity : AppCompatActivity() {
             previewBuilder?.addTarget(streamManager?.getSurface()!!)
 
             cameraDevice?.createCaptureSession(surfaces, captureStateCallback, null)
-//            mediaRecorder?.start()
-
 
         } catch (e: CameraAccessException) {
             e.printStackTrace()
